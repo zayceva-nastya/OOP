@@ -14,9 +14,9 @@ public function __construct($a,$b)//методы
         
     }
 public function perimetr(){
-    $this->c = sqrt( $this->a**2 +  $this->b**2 );
+    $c = sqrt( $this->a**2 + $this->b**2 );
    
-    return $this->a +$this->b+$this->c;
+    return $this->a+$this->b+$c;
 }
 
 public function area(){
