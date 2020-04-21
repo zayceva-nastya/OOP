@@ -8,7 +8,7 @@ abstract class Li extends Tag
       $this->data = "";
 
       foreach ($data as $value) {
-         $this->data .= "<li>$value</li>";
+         $this->data .= "\t<li>$value</li>\n";
       }
       
       return $this;
