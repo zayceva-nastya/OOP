@@ -1,4 +1,5 @@
 <?php
+
 abstract class Li extends Tag
 {
     protected $data;
