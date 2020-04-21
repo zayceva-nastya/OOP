@@ -1,14 +1,9 @@
 <?php
-class U
+class U extends Tag
 {
-    protected $innerText;
-    public function innerText(string $innerText): self
-    {
-        $this->innerText = $innerText;
-        return $this;
-    }
-    public function HTML()
+    public function html()
     {
         return "<u>$this->innerText</u> ";
     }
 }
+
