@@ -1,19 +1,7 @@
 <?php
-class I
+class I extends Tag
 {
-    protected $innerText;
-
-    public function __construct()
-    {
-        $this->innerText = '';
-        return $this;
-    }
-    public function innerText(string $innerText): self
-    {
-        $this->innerText = $innerText;
-        return $this;
-    }
-    public function HTML()
+    public function html()
     {
         return "<i>$this->innerText</i> ";
     }
