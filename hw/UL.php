@@ -1,20 +1,10 @@
 <?php
 
-class UL
+class UL extends Li
 {
-    protected $text;
-
-    public function text(array $text): self
+    
+    public function html()
     {
-        $str = "";
-        foreach ($text as $key => $value) {
-            $str .= "<li>$value</li>\n";
-        }
-        $this->text = $str;
-        return $this;
-    }
-    public function HTML()
-    {
-        return "\n<ul>\n$this->text</ul> ";
+        return "\n<ul $this->style $this->class $this->id>\n$this->data</ul> ";
     }
 }
