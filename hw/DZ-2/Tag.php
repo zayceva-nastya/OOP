@@ -8,19 +8,19 @@ abstract class Tag
 
     public function setStyle(string $text)
     {
-        $this->style = $text;
+        $this->style =" style='$text'";
         return $this;
     }
 
     public function setClass(string $text)
     {
-        $this->class = $text;
+        $this->class = "class='$text'";
         return $this;
     }
 
     public function setId(string $text)
     {
-        $this->id = $text;
+        $this->id = "id='$text'";
         return $this;
     }
 

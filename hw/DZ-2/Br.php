@@ -3,6 +3,6 @@ class Br extends Tag
 {
     public function html()
     {
-        return "<br>";
+        return "<br$this->style$this->id$this->class>";
     }
 }

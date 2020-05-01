@@ -1,40 +1,42 @@
 <?php
 
-class Area extends Tictac
+class Area
 {
+    private $map;
+
+    public function setMap(array $map)
+    {
+        $this->map = $map;
+        return $this;
+    }
+
     public function style(string $style): self
     {
         $this->style = " style='$style'";
         return $this;
     }
 
-    public function show(array $map)
+    public function html()
     {
-        $str = "";
+        $str = "<table$this->style>";
 
-        foreach ($map  as $row => $value) {
+        foreach ($this->map  as $row => $value) {
             $str .= "<tr>";
-            foreach ($value  as  $ke => $value) {
+            foreach ($value  as  $key => $value) {
                 // $str .= "<td>$value</td>";
+                $mark = '';
                 if ($value === 1) {
-                    $str .= "<td $this->style>❌</td>";
+                    $mark = "❌";
+                } else if ($value === 0) {
+                    $mark = "⭕️";
                 }
-                if ($value === 0) {
-                    $str .= "<td $this->style>⭕️</td>";
-                }
-                if ($value === Null) {
-                    $str .= "<td $this->style></td>";
-                }
+                $str .= "<td$this->style>$mark</td>";
             }
             $str .= "</tr>";
         }
+        $str .= "</table>";
 
 
-        $this->show = $str;
-        return $this;
-    }
-    public function html()
-    {
-        return "<table>$this->show</table>";
+        return $str;
     }
 }
