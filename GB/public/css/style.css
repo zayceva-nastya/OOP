@@ -1,0 +1,32 @@
+.table td {
+    border: 2px solid black;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.form textarea {
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    display: block;
+    margin: 20px;
+}
+
+.form input[type='text'] {
+    background-color: lightgray;
+    display: block;
+    margin: 20px;
+}
+
+.form input[type='submit'] {
+    width: 100px;
+    background-color: red;
+    margin: 20px;
+}
+
+.form {
+    margin: 20px;
+    padding: 25px;
+}
