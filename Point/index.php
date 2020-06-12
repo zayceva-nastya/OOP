@@ -6,6 +6,7 @@ use Point\Line;
 use Point\Rectangle;
 use Point\Triangle;
 use Point\Triangle2;
+use Point\Triangle3;
 
 $startPoint = new Point();
 $endPoint = new Point();
@@ -54,9 +55,9 @@ $rect
 
 $tr2 = new Triangle2();
 
-$pointA = new Point(8,2);
-$pointB =new Point(5,3);
-$pointC = new Point(3,5);
+$pointA = new Point(1,2);
+$pointB =new Point(5,0);
+$pointC = new Point(0,0);
 
 $tr2
 ->setPointA($pointA)
@@ -64,3 +65,9 @@ $tr2
 ->setPointC($pointC);
 
 echo $tr2->getPerimeter();
+$tr3 = new Triangle3();
+$tr3->setPointA($pointA)
+->setPointB($pointB)
+->setPointC($pointC);
+echo $tr3->getPerimeter();
+
