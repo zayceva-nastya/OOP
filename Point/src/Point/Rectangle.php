@@ -13,28 +13,49 @@ class Rectangle implements RectangleInterface
         return $this;
     }
 
-    public function setEndPoint(Point $endPoint): Rectangle
+    public function setEndPoint(Point $endPoint)
     {
         $this->endPoint = $endPoint;
         return $this;
     }
 
-    public function width():float
+    protected function width()
     {
-        return $this->startPoint->getX() - $this->endPoint->getX();
+        if ($this->check()) {
+            return abs($this->startPoint->getX() - $this->endPoint->getX());
+        } else {
+            return 0;
+        }
     }
-    public function height():float
+    protected function height()
     {
-        return $this->startPoint->getY() - $this->endPoint->getY();
+        if ($this->check()) {
+            return abs($this->startPoint->getY() - $this->endPoint->getY());
+        } else {
+            return 0;
+        }
+    }
+
+    private function check()
+    {
+        return (is_object($this->startPoint) && is_object($this->endPoint));
     }
 
     public function getArea(): float
     {
-        return $this->width() * $this->height();
+        if ($this->check()) {
+            return $this->width() * $this->height();
+        }else{
+            return 0;
+        }
     }
 
     public function getPerimeter(): float
     {
-        return ($this->width() + $this->height()) * 2;
+        if ($this->check()) {
+            return ($this->width() + $this->height()) * 2;
+        }else{
+            return 0;
+        }
     }
 }
