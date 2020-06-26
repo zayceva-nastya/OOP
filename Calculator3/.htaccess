@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^.*$ /Calculator3/public/$0 [QSA,L]
